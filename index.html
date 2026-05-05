@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rafiul Ahsan — Marketing Ops & CRM</title>
+    <meta name="description"
+        content="Results-driven marketing professional specializing in HubSpot CRM, Google/Meta Ads, GTM research, and process automation. Based in Nürnberg, Germany.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent: #0d9488;
+            --accent-light: #14b8a6;
+            --accent-glow: rgba(13, 148, 136, 0.15);
+            --border: #334155;
+            --border-hover: #475569;
+            --indigo: #6366f1;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-1px);
+        }
+
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent-glow);
+            border: 1px solid rgba(13, 148, 136, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--accent-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent), var(--indigo));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-subtitle strong {
+            color: var(--text-primary);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .photo-container::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            background: linear-gradient(135deg, var(--accent), var(--indigo));
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            position: relative;
+            border: 4px solid var(--bg-primary);
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            border: 4px solid var(--bg-primary);
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-text strong {
+            color: var(--text-primary);
+        }
+
+        .about-stats {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* EXPERIENCE */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--indigo), transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+            transform: translateX(-5px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-role {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .timeline-company {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .timeline-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .timeline-bullets li {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding-left: 1.25rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .timeline-bullets li::before {
+            content: '\2192';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* EDUCATION */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--indigo));
+        }
+
+        .edu-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-school {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-period {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg-primary);
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-spec {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: var(--bg-primary);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--accent-light);
+            gap: 0.6rem;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .status-active {
+            background: rgba(13, 148, 136, 0.15);
+            color: var(--accent-light);
+        }
+
+        .status-progress {
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--indigo);
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            border-color: var(--border-hover);
+        }
+
+        .skill-category-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-pill {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .skill-pill.teal {
+            background: rgba(13, 148, 136, 0.12);
+            color: var(--accent-light);
+            border: 1px solid rgba(13, 148, 136, 0.25);
+        }
+
+        .skill-pill.indigo {
+            background: rgba(99, 102, 241, 0.12);
+            color: #818cf8;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+        }
+
+        .skill-pill.slate {
+            background: rgba(100, 116, 139, 0.12);
+            color: #94a3b8;
+            border: 1px solid rgba(100, 116, 139, 0.25);
+        }
+
+        /* CERTIFICATIONS */
+        .certs-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            transition: var(--transition);
+        }
+
+        .cert-item:hover {
+            border-color: var(--accent);
+        }
+
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-glow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .cert-info {
+            flex: 1;
+        }
+
+        .cert-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cert-issuer {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .cert-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg-primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        /* LANGUAGES */
+        .lang-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.75rem;
+            text-align: center;
+            min-width: 140px;
+            transition: var(--transition);
+        }
+
+        .lang-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .lang-flag {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .lang-level {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* CONTACT */
+        .contact-section {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .contact-section .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .contact-btn.linkedin {
+            background: var(--accent);
+            color: white;
+        }
+
+        .contact-btn.linkedin:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
+        }
+
+        .contact-btn.email {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .contact-btn.email:hover {
+            border-color: var(--accent);
+            color: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .contact-btn.github {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .contact-btn.github:hover {
+            border-color: var(--indigo);
+            color: #818cf8;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-photo {
+                order: 1;
+            }
+
+            .photo-container {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-subtitle {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-mobile-toggle {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--bg-primary);
+                border-bottom: 1px solid var(--border);
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">RA</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Let's Connect</a>
+            <button class="nav-mobile-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">Available for opportunities</div>
+                <h1>Md Rafiul <span>Ahsan</span></h1>
+                <p class="hero-subtitle">
+                    Results-driven marketing professional specializing in <strong>HubSpot CRM</strong>,
+                    <strong>Google/Meta Ads</strong>, <strong>GTM research</strong>, and <strong>process
+                        automation</strong> — turning raw data into actionable decisions.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://www.linkedin.com/in/rafiulahsan/" class="btn-primary" target="_blank">
+                        LinkedIn Profile
+                    </a>
+                    <a href="mailto:rafiulahsan.de@gmail.com" class="btn-secondary">
+                        Email Me
+                    </a>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <div class="photo-container">
+                    <!-- Replace with: <img src="assets/photo.jpg" alt="Md Rafiul Ahsan"> -->
+                    <div class="photo-placeholder">RA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="section-header fade-in">
+            <p class="section-label">About Me</p>
+            <h2 class="section-title">Professional Snapshot</h2>
+        </div>
+        <div class="about-grid fade-in">
+            <div class="about-text">
+                <p>Results-driven marketing professional with <strong>~2 years of full-time experience</strong> across
+                    innovation consulting, venture concepts, and client delivery. I specialize in <strong>HubSpot
+                        CRM</strong>, <strong>Google Ads/Meta Ads</strong>, <strong>GTM research</strong>, and
+                    <strong>pitch decks/proposals</strong>, plus Google Analytics/Search Console, email marketing, and
+                    process automation (N8N, Notion/Trello).
+                </p>
+                <br>
+                <p>Currently pursuing my <strong>MA in Social Entrepreneurship for Sustainable Development</strong> at
+                    Neu-Ulm University of Applied Sciences, Germany — while building tools that solve real problems for
+                    internationals in Germany.</p>
+                <br>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                    &#128205; N&uuml;rnberg, Germany &nbsp;|&nbsp; &#128231; rafiulahsan.de@gmail.com &nbsp;|&nbsp;
+                    &#128241; +49 1604294233
+                </p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">~2 yrs</div>
+                    <div class="stat-label">Full-time experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">60+</div>
+                    <div class="stat-label">Proposals delivered</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Projects won</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Open-source projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="section-header fade-in">
+            <p class="section-label">Experience</p>
+            <h2 class="section-title">Where I've Worked</h2>
+        </div>
+        <div class="timeline fade-in">
+            <!-- Job 1 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-role">Teaching Assistant</div>
+                        <div class="timeline-company">OTH Amberg-Weiden &middot; Weiden, Germany</div>
+                    </div>
+                    <span class="timeline-meta">Oct 2023 &ndash; Aug 2024</span>
+                </div>
+                <ul class="timeline-bullets">
+                    <li>Supported 2 English-taught modules for ~60&ndash;100 students/semester through Moodle
+                        operations, student support, and live-session troubleshooting</li>
+                    <li>Reviewed and refined ~60&ndash;80 slides/week, improving clarity of lecture flow and assignment
+                        instructions</li>
+                    <li>Built a 15+ Q&amp;A Moodle FAQ/onboarding guide, reducing repetitive questions and enabling
+                        student self-service</li>
+                    <li>Designed ~10 Mentimeter quiz questions per class to drive participation and surface
+                        comprehension gaps in real time</li>
+                    <li>Handled ~20&ndash;30 student questions/week, resolving blockers on assignments and platform
+                        usage</li>
+                    <li>Troubleshot hybrid-class tech (Zoom, screen sharing, audio) to keep sessions running smoothly
+                    </li>
+                    <li>Standardized course operations in Moodle: submission links, deadlines, instructions, and version
+                        control</li>
+                    <li>Tracked attendance in Google Sheets and maintained reusable templates for consistency</li>
+                </ul>
+            </div>
+            <!-- Job 2 -->
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-role">Marketing Associate</div>
+                        <div class="timeline-company">GAPS Bangla &middot; Dhaka, Bangladesh</div>
+                    </div>
+                    <span class="timeline-meta">May 2019 &ndash; Nov 2021</span>
+                </div>
+                <ul class="timeline-bullets">
+                    <li>Drove go-to-market execution across innovation consulting, venture-building concepts, and client
+                        delivery</li>
+                    <li>Built and delivered ~20 pitch decks and investor/client-facing presentations, turning complex
+                        concepts into decision-ready narratives</li>
+                    <li>Produced 60+ proposals and commercial packages; contributed to 20+ won projects via reusable
+                        templates and standardized formats</li>
+                    <li>Ran structured lead qualification from performance marketing (Meta/Google), handling
+                        ~30&ndash;50 warm-lead calls/day</li>
+                    <li>Led market research and competitor analysis for digital platform concepts across education,
+                        healthcare, and public-sector mobility</li>
+                    <li>Improved delivery reliability by tightening project handoffs, checklists, and reporting &mdash;
+                        consistently delivering ~1 week ahead of deadline</li>
+                    <li>Managed client-facing communication loops: meeting notes, decisions into next steps, and
+                        structured follow-ups</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="section-header fade-in">
+            <p class="section-label">Education</p>
+            <h2 class="section-title">Academic Background</h2>
+        </div>
+        <div class="edu-grid fade-in">
+            <div class="edu-card">
+                <div class="edu-degree">MA Social Entrepreneurship for Sustainable Development</div>
+                <div class="edu-school">Neu-Ulm University of Applied Sciences, Germany</div>
+                <span class="edu-period">Mar 2025 &ndash; Feb 2027</span>
+                <div class="edu-spec">Marketing operations, data-driven decision-making, process optimization</div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-degree">MA International Management &amp; Sustainability</div>
+                <div class="edu-school">OTH Amberg-Weiden, Germany</div>
+                <span class="edu-period">Mar 2022 &ndash; Sep 2024</span>
+                <div class="edu-spec">B2B marketing, go-to-market strategy, market research</div>
+            </div>
+            <div class="edu-card">
+                <div class="edu-degree">BBA in Marketing</div>
+                <div class="edu-school">Bangladesh University of Business &amp; Technology, Dhaka</div>
+                <span class="edu-period">May 2012 &ndash; Nov 2016</span>
+                <div class="edu-spec">Marketing fundamentals, business administration</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="section-header fade-in">
+            <p class="section-label">Projects</p>
+            <h2 class="section-title">What I'm Building</h2>
+        </div>
+        <div class="projects-grid fade-in">
+            <div class="project-card">
+                <span class="project-status status-progress">In Progress</span>
+                <div class="project-type">Product</div>
+                <div class="project-name">ExpatNav</div>
+                <div class="project-desc">Interactive platform for people moving to Germany &mdash; filters and compares
+                    structured relocation service data (housing, visa, insurance, banking).</div>
+                <div class="project-tags">
+                    <span class="project-tag">Notion</span>
+                    <span class="project-tag">Google Sheets</span>
+                    <span class="project-tag">Figma</span>
+                </div>
+                <a href="https://github.com/rafiulahsan-de/expatnav" class="project-link" target="_blank">View on GitHub
+                    &rarr;</a>
+            </div>
+            <div class="project-card">
+                <span class="project-status status-progress">In Progress</span>
+                <div class="project-type">Product</div>
+                <div class="project-name">KostenFinder</div>
+                <div class="project-desc">Compares local service pricing data &mdash; shows cost ranges based on city,
+                    service type, and user-reported data for everyday services in Germany.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Google Sheets</span>
+                    <span class="project-tag">Notion</span>
+                    <span class="project-tag">Figma</span>
+                </div>
+                <a href="https://github.com/rafiulahsan-de/kostenfinder" class="project-link" target="_blank">View on
+                    GitHub &rarr;</a>
+            </div>
+            <div class="project-card">
+                <span class="project-status status-active">Active</span>
+                <div class="project-type">Framework</div>
+                <div class="project-name">Campaign Learning System</div>
+                <div class="project-desc">Structured post-mortem template: Expectation &rarr; Result &rarr; Missed
+                    signal &rarr; Root cause &rarr; Next action. Creates repeatable learning loops.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Notion</span>
+                    <span class="project-tag">Google Sheets</span>
+                </div>
+                <a href="https://github.com/rafiulahsan-de/campaign-learning-system" class="project-link"
+                    target="_blank">View on GitHub &rarr;</a>
+            </div>
+            <div class="project-card">
+                <span class="project-status status-active">Active</span>
+                <div class="project-type">Framework</div>
+                <div class="project-name">First-Time User Journey Map</div>
+                <div class="project-desc">Documents the steps + questions a first-time user experiences before reaching
+                    first value &mdash; identifies friction points and improves activation messaging.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Notion</span>
+                    <span class="project-tag">Figma</span>
+                    <span class="project-tag">Google Sheets</span>
+                </div>
+                <a href="https://github.com/rafiulahsan-de/first-time-user-journey-map" class="project-link"
+                    target="_blank">View on GitHub &rarr;</a>
+            </div>
+            <div class="project-card">
+                <span class="project-status status-active">Active</span>
+                <div class="project-type">System</div>
+                <div class="project-name">Working Student Toolkit</div>
+                <div class="project-desc">Lightweight execution system for priorities, open questions, and feedback
+                    logging &mdash; designed to improve team communication and consistency.</div>
+                <div class="project-tags">
+                    <span class="project-tag">Notion</span>
+                    <span class="project-tag">Trello</span>
+                    <span class="project-tag">Google Sheets</span>
+                </div>
+                <a href="https://github.com/rafiulahsan-de/working-student-toolkit" class="project-link"
+                    target="_blank">View on GitHub &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="section-header fade-in">
+            <p class="section-label">Technical Skills</p>
+            <h2 class="section-title">My Toolkit</h2>
+        </div>
+        <div class="skills-grid fade-in">
+            <div class="skill-category">
+                <div class="skill-category-title">CRM &amp; Lifecycle</div>
+                <div class="skill-list">
+                    <span class="skill-pill teal">HubSpot CRM</span>
+                    <span class="skill-pill teal">Pipeline Tracking</span>
+                    <span class="skill-pill teal">Mailchimp</span>
+                    <span class="skill-pill teal">Salesforce</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Performance Marketing</div>
+                <div class="skill-list">
+                    <span class="skill-pill teal">Google Ads</span>
+                    <span class="skill-pill teal">Meta Ads Manager</span>
+                    <span class="skill-pill teal">Google Analytics</span>
+                    <span class="skill-pill teal">Search Console</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Data &amp; Analytics</div>
+                <div class="skill-list">
+                    <span class="skill-pill indigo">Google Sheets (Advanced)</span>
+                    <span class="skill-pill indigo">Excel</span>
+                    <span class="skill-pill indigo">Power BI</span>
+                    <span class="skill-pill indigo">SQL</span>
+                    <span class="skill-pill indigo">Statistics</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Automation &amp; Project Management</div>
+                <div class="skill-list">
+                    <span class="skill-pill indigo">N8N</span>
+                    <span class="skill-pill indigo">Notion</span>
+                    <span class="skill-pill indigo">Trello</span>
+                    <span class="skill-pill indigo">Jira</span>
+                    <span class="skill-pill indigo">Google Workspace</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Content &amp; Design</div>
+                <div class="skill-list">
+                    <span class="skill-pill slate">PowerPoint</span>
+                    <span class="skill-pill slate">Canva</span>
+                    <span class="skill-pill slate">Figma</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Channels</div>
+                <div class="skill-list">
+                    <span class="skill-pill slate">SEO</span>
+                    <span class="skill-pill slate">Email Marketing</span>
+                    <span class="skill-pill slate">Social Media</span>
+                    <span class="skill-pill slate">Paid Acquisition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <div class="section-header fade-in">
+            <p class="section-label">Certifications</p>
+            <h2 class="section-title">Credentials &amp; Courses</h2>
+        </div>
+        <div class="certs-list fade-in">
+            <div class="cert-item">
+                <div class="cert-icon">&#127941;</div>
+                <div class="cert-info">
+                    <div class="cert-name">SAP Customer Experience (CX)</div>
+                    <div class="cert-issuer">SAP Learning</div>
+                </div>
+                <span class="cert-date">In progress &middot; Expected 05/2026</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">&#127941;</div>
+                <div class="cert-info">
+                    <div class="cert-name">Positioning SAP Business AI</div>
+                    <div class="cert-issuer">SAP</div>
+                </div>
+                <span class="cert-date">2026</span>
+            </div>
+            <div class="cert-item">
+                <div class="cert-icon">&#127941;</div>
+                <div class="cert-info">
+                    <div class="cert-name">HubSpot Inbound Marketing</div>
+                    <div class="cert-issuer">HubSpot Academy</div>
+                </div>
+                <span class="cert-date">12/2025</span>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="section-header fade-in" style="margin-top: 4rem;">
+            <p class="section-label">Languages</p>
+            <h2 class="section-title">Communication</h2>
+        </div>
+        <div class="lang-grid fade-in">
+            <div class="lang-card">
+                <div class="lang-flag">&#127468;&#127463;</div>
+                <div class="lang-name">English</div>
+                <div class="lang-level">Professional fluency</div>
+            </div>
+            <div class="lang-card">
+                <div class="lang-flag">&#127465;&#127466;</div>
+                <div class="lang-name">German</div>
+                <div class="lang-level">B1</div>
+            </div>
+            <div class="lang-card">
+                <div class="lang-flag">&#127463;&#127465;</div>
+                <div class="lang-name">Bengali</div>
+                <div class="lang-level">Native</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="section-header fade-in">
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+        <p class="contact-subtitle fade-in">I'm always open to conversations about marketing systems, growth
+            experiments, or collaboration opportunities.</p>
+        <div class="contact-links fade-in">
+            <a href="https://www.linkedin.com/in/rafiulahsan/" class="contact-btn linkedin" target="_blank">
+                LinkedIn
+            </a>
+            <a href="mailto:rafiulahsan.de@gmail.com" class="contact-btn email">
+                Email
+            </a>
+            <a href="https://github.com/rafiulahsan-de" class="contact-btn github" target="_blank">
+                GitHub
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Md Rafiul Ahsan &middot; Built with intention, not templates.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Nav background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.borderBottomColor = 'var(--border-hover)';
+            } else {
+                nav.style.borderBottomColor = 'var(--border)';
+            }
+        });
+    </script>
+</body>
+
+</html>
